@@ -1,12 +1,14 @@
+`default_nettype none
+
 module tt_um_alu_secuencial (
-    input  wire [7:0] ui_in,    // 8-bit operand input bus (A or B)
-    output wire [7:0] uo_out,   // 8-bit ALU result output bus
-    input  wire [7:0] uio_in,   // Control inputs on uio_in[3:0]
-    output wire [7:0] uio_out,  // NZCV flags on uio_out[7:4]
-    output wire [7:0] uio_oe,   // 1 = Output (uio[7:4]), 0 = Input (uio[3:0])
-    input  wire       ena,      // Design enable (always 1 when powered)
-    input  wire       clk,      // System clock
-    input  wire       rst_n     // Active-low asynchronous reset
+    input  wire [7:0] ui_in,    
+    output wire [7:0] uo_out,   
+    input  wire [7:0] uio_in,   
+    output wire [7:0] uio_out,  
+    output wire [7:0] uio_oe,   
+    input  wire       ena,      
+    input  wire       clk,      
+    input  wire       rst_n    
 );
 
     // Configure uio[7:4] as outputs for {flag_n, flag_z, flag_c, flag_v}
