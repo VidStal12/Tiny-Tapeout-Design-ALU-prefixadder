@@ -49,12 +49,13 @@ module divisor #(
             localparam int HIGH_BIT = ancho - 1 - (s * BITS_PER_STAGE);
             localparam int LOW_BIT  = ancho - ((s + 1) * BITS_PER_STAGE);
 
+            logic [ancho-1:0] a_in;
+            logic [ancho-1:0] b_in;
+            logic [ancho-1:0] q_temp;
+            logic [ancho:0]   r_temp;
+            logic [ancho:0]   diff;
+
             always_comb begin
-                logic [ancho-1:0] a_in;
-                logic [ancho-1:0] b_in;
-                logic [ancho-1:0] q_temp;
-                logic [ancho:0]   r_temp;
-                logic [ancho:0]   diff;
 
                 if (s == 0) begin
                     a_in   = a;
